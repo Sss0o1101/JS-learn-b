@@ -46,7 +46,7 @@ querySelector・・・HTMLから任意のidがついた要素を取得する
     const colors = document.querySelector("#colorPicker");
 
     const colorBg = () => {
-           カラーコードを表示
+        //カラーコードを表示
         text.textContent =`カラーコード${colors.value}`;
     };
 
