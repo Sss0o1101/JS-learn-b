@@ -27,7 +27,7 @@
         if (btn.textContent === "ダークモードにする") {
             btn.textContent = "ライトモードにする";
         } else {
-            btn.textContent = "ダークモードにする"
+            btn.textContent = "ダークモードにする";
         }
     });
 
