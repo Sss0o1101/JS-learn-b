@@ -30,3 +30,18 @@
 /* ---------------------------------------------------------------------------------------------------------------------*/
 
 /* 5-4 配列の中にある画像を表示しよう---------------------------------------------------------------------------------------------------------------*/
+
+    const menu = document.querySelector('#menu');
+
+    const lists = [
+        'strawberry.jpg',
+        'lime.jpg',
+        'mango.jpg',
+        'lemon.jpg',
+        'fig.jpg',
+        'apple.jpg',
+    ];
+
+    const content = `<div><img src="./images/${lists[0]}" alt=""></div>`;
+
+    menu.insertAdjacentHTML('beforeend', content);
