@@ -71,6 +71,26 @@
 
 /* 5-6 for文で画像を一覧表示しよう (for文) ---------------------------------------------------------------------------------------------------------------*/
 
+    // const menu = document.querySelector('#menu');
+
+    // const lists = [
+    //     'strawberry.jpg',
+    //     'lime.jpg',
+    //     'mango.jpg',
+    //     'lemon.jpg',
+    //     'fig.jpg',
+    //     'apple.jpg',
+    // ];
+
+    // for (let i = 0; i < 6; i++) {
+    //     const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+    // // 5-4 と同じ処理
+
+/* 5-6 lengthを使う場合(省略) -----------------------------------------------------------------*/
+
     const menu = document.querySelector('#menu');
 
     const lists = [
@@ -82,9 +102,9 @@
         'apple.jpg',
     ];
 
-    for (let i = 0; i < 6; i++) {
+    // console.log(lists.length);
+
+    for (let i = 0; i < lists.length; i++) {
         const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
         menu.insertAdjacentHTML('beforeend', content);
     }
-
-    // 5-4 と同じ処理
