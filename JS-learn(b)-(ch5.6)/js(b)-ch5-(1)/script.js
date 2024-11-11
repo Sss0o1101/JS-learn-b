@@ -227,13 +227,61 @@
     // console.log(lists[0].name); //イチゴ
 
     // for (let i = 0; i < lists.length; i++) {
-    //     const content = `<div><img src="./images/${lists[i].img}" alt=""></div>`;  //.img をつける
+    //     const content = `<div><img src="./images/${lists[i].img}" alt=""></div>`;
     //     menu.insertAdjacentHTML('beforeend', content);
     // }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* 5-11 配列とオブジェクトをひとまとめにしよう (一覧を表示しよう) ---------------------------------------------------------------------------------------------------------------*/
+
+    // const menu = document.querySelector('#menu');
+
+    // const lists = [
+    //     {
+    //         name: 'イチゴ',
+    //         img: 'strawberry.jpg',
+    //         price: 450,
+    //     },
+    //     {
+    //         name: 'ライム',
+    //         img: 'lime.jpg',
+    //         price: 400,
+    //     },
+    //     {
+    //         name: 'マンゴー',
+    //         img: 'mango.jpg',
+    //         price: 500,
+    //     },
+    //     {
+    //         name: 'レモン',
+    //         img: 'lemon.jpg',
+    //         price: 400,
+    //     },
+    //     {
+    //         name: 'イチジク',
+    //         img: 'fig.jpg',
+    //         price: 500,
+    //     },
+    //     {
+    //         name: 'リンゴ',
+    //         img: 'apple.jpg',
+    //         price: 400,
+    //     },
+    // ];
+
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     const content = `<div><img src="./images/${lists[i].img}" alt=""><h2>${lists[i].name}</h2><p>${lists[i].price}円</p></div>`;  //.img をつける
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+    // //  .img をつける
+    // // <h2>${lists[i].name}</h2><p>${lists[i].price}円</p>  によって、nameとpriceを取得
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-12 分割代入でコードをスッキリさせよう ---------------------------------------------------------------------------------------------------------------*/
 
     const menu = document.querySelector('#menu');
 
@@ -270,9 +318,16 @@
         },
     ];
 
-    console.log(lists[0].name); //イチゴ
 
     for (let i = 0; i < lists.length; i++) {
-        const content = `<div><img src="./images/${lists[i].img}" alt=""></div>`;  //.img をつける
+        // const name = lists[i].name;
+        // const img = lists[i].img;
+        // const price = lists[i].price;
+        const {name, img, price} = lists[i]
+
+        const content = `<div><img src="./images/${img}" alt=""><h2>${name}</h2><p>${price}円</p></div>`;
+
         menu.insertAdjacentHTML('beforeend', content);
     }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
