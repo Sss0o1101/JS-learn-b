@@ -152,34 +152,127 @@
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* 5-9 オブジェクトの情報を取得しよう ---------------------------------------------------------------------------------------------------------------*/
-    //ドット記法        .name
-    //ブランケット記法   ['name']
+
+    // //ドット記法        .name
+    // //ブランケット記法   ['name']
+
+    // const menu = document.querySelector('#menu');
+
+    // const strawberry = {
+    //     name: "イチゴ",
+    //     img: "strawberry.jpg",
+    //     price: 450,
+    // };
+    // console.log(strawberry); //{name: 'イチゴ', img: 'strawberry.jpg', price: 450}
+
+    // console.log(strawberry.name);  //イチゴ
+    // console.log(strawberry['img']);   //strawberry.jpg
+    // console.log(strawberry.price); //450
+
+
+    // const lists = [
+    //     'strawberry.jpg',
+    //     'lime.jpg',
+    //     'mango.jpg',
+    //     'lemon.jpg',
+    //     'fig.jpg',
+    //     'apple.jpg',
+    // ];
+
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-10 配列とオブジェクトをひとまとめにしよう ---------------------------------------------------------------------------------------------------------------*/
+
+    // const menu = document.querySelector('#menu');
+
+    // const lists = [
+    //     {
+    //         name: 'イチゴ',
+    //         img: 'strawberry.jpg',
+    //         price: 450,
+    //     },
+    //     {
+    //         name: 'ライム',
+    //         img: 'lime.jpg',
+    //         price: 400,
+    //     },
+    //     {
+    //         name: 'マンゴー',
+    //         img: 'mango.jpg',
+    //         price: 500,
+    //     },
+    //     {
+    //         name: 'レモン',
+    //         img: 'lemon.jpg',
+    //         price: 400,
+    //     },
+    //     {
+    //         name: 'イチジク',
+    //         img: 'fig.jpg',
+    //         price: 500,
+    //     },
+    //     {
+    //         name: 'リンゴ',
+    //         img: 'apple.jpg',
+    //         price: 400,
+    //     },
+    // ];
+
+    // console.log(lists[0].name); //イチゴ
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     const content = `<div><img src="./images/${lists[i].img}" alt=""></div>`;  //.img をつける
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-11 配列とオブジェクトをひとまとめにしよう (一覧を表示しよう) ---------------------------------------------------------------------------------------------------------------*/
 
     const menu = document.querySelector('#menu');
 
-    const strawberry = {
-        name: "イチゴ",
-        img: "strawberry.jpg",
-        price: 450,
-    };
-    console.log(strawberry); //{name: 'イチゴ', img: 'strawberry.jpg', price: 450}
-
-    console.log(strawberry.name);  //イチゴ
-    console.log(strawberry['img']);   //strawberry.jpg
-    console.log(strawberry.price); //450
-
-
     const lists = [
-        'strawberry.jpg',
-        'lime.jpg',
-        'mango.jpg',
-        'lemon.jpg',
-        'fig.jpg',
-        'apple.jpg',
+        {
+            name: 'イチゴ',
+            img: 'strawberry.jpg',
+            price: 450,
+        },
+        {
+            name: 'ライム',
+            img: 'lime.jpg',
+            price: 400,
+        },
+        {
+            name: 'マンゴー',
+            img: 'mango.jpg',
+            price: 500,
+        },
+        {
+            name: 'レモン',
+            img: 'lemon.jpg',
+            price: 400,
+        },
+        {
+            name: 'イチジク',
+            img: 'fig.jpg',
+            price: 500,
+        },
+        {
+            name: 'リンゴ',
+            img: 'apple.jpg',
+            price: 400,
+        },
     ];
 
+    console.log(lists[0].name); //イチゴ
 
     for (let i = 0; i < lists.length; i++) {
-        const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
+        const content = `<div><img src="./images/${lists[i].img}" alt=""></div>`;  //.img をつける
         menu.insertAdjacentHTML('beforeend', content);
     }
