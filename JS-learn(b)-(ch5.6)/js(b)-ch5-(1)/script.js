@@ -89,9 +89,85 @@
 
     // // 5-4 と同じ処理
 
-/* 5-6 lengthを使う場合(省略) -----------------------------------------------------------------*/
+/* 5-6 lengthを使う場合(省略) ------------------------------------------------------*/
+
+    // const menu = document.querySelector('#menu');
+
+    // const lists = [
+    //     'strawberry.jpg',
+    //     'lime.jpg',
+    //     'mango.jpg',
+    //     'lemon.jpg',
+    //     'fig.jpg',
+    //     'apple.jpg',
+    // ];
+
+    // // console.log(lists.length);
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-7 変数letと定数constの違いとは？ ---------------------------------------------------------------------------------------------------------------*/
+
+    // //変数
+    // let letName = "クラウド"
+    // letName = "ザックス"
+    // console.log(letName);  //再代入が出来る
+
+/*  -----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-8 オブジェクトで画像、メニュー名、値段をまとめよう ---------------------------------------------------------------------------------------------------------------*/
+
+    // const menu = document.querySelector('#menu');
+
+    // const strawberry = {
+    //     name: "イチゴ",
+    //     img: "strawberry.jpg",
+    //     price: 450,
+    // };
+    // console.log(strawberry); //{name: 'イチゴ', img: 'strawberry.jpg', price: 450}
+
+
+    // const lists = [
+    //     'strawberry.jpg',
+    //     'lime.jpg',
+    //     'mango.jpg',
+    //     'lemon.jpg',
+    //     'fig.jpg',
+    //     'apple.jpg',
+    // ];
+
+
+    // for (let i = 0; i < lists.length; i++) {
+    //     const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
+    //     menu.insertAdjacentHTML('beforeend', content);
+    // }
+
+    // //ここで作成された「strawberry」オブジェクトには、3つのデータがまとめられている
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-9 オブジェクトの情報を取得しよう ---------------------------------------------------------------------------------------------------------------*/
+    //ドット記法        .name
+    //ブランケット記法   ['name']
 
     const menu = document.querySelector('#menu');
+
+    const strawberry = {
+        name: "イチゴ",
+        img: "strawberry.jpg",
+        price: 450,
+    };
+    console.log(strawberry); //{name: 'イチゴ', img: 'strawberry.jpg', price: 450}
+
+    console.log(strawberry.name);  //イチゴ
+    console.log(strawberry['img']);   //strawberry.jpg
+    console.log(strawberry.price); //450
+
 
     const lists = [
         'strawberry.jpg',
@@ -102,7 +178,6 @@
         'apple.jpg',
     ];
 
-    // console.log(lists.length);
 
     for (let i = 0; i < lists.length; i++) {
         const content = `<div><img src="./images/${lists[i]}" alt=""></div>`;
