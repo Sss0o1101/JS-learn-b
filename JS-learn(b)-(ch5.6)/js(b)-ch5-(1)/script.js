@@ -31,26 +31,40 @@
 
 /* 5-4 配列の中にある画像を表示しよう (配列) ---------------------------------------------------------------------------------------------------------------*/
 
-    const menu = document.querySelector('#menu');
+    // const menu = document.querySelector('#menu');
 
-    const lists = [
-        'strawberry.jpg',
-        'lime.jpg',
-        'mango.jpg',
-        'lemon.jpg',
-        'fig.jpg',
-        'apple.jpg',
-    ];
+    // const lists = [
+    //     'strawberry.jpg',
+    //     'lime.jpg',
+    //     'mango.jpg',
+    //     'lemon.jpg',
+    //     'fig.jpg',
+    //     'apple.jpg',
+    // ];
 
-    //６個の画像の表示
-    const content = `<div><img src="./images/${lists[0]}" alt=""></div>
-        <div><img src="./images/${lists[1]}" alt=""></div>
-        <div><img src="./images/${lists[2]}" alt=""></div>
-        <div><img src="./images/${lists[3]}" alt=""></div>
-        <div><img src="./images/${lists[4]}" alt=""></div>
-        <div><img src="./images/${lists[5]}" alt=""></div>
-    `;
+    // //６個の画像の表示
+    // const content = `<div><img src="./images/${lists[0]}" alt=""></div>
+    //     <div><img src="./images/${lists[1]}" alt=""></div>
+    //     <div><img src="./images/${lists[2]}" alt=""></div>
+    //     <div><img src="./images/${lists[3]}" alt=""></div>
+    //     <div><img src="./images/${lists[4]}" alt=""></div>
+    //     <div><img src="./images/${lists[5]}" alt=""></div>
+    // `;
 
-    menu.insertAdjacentHTML('beforeend', content);
+    // menu.insertAdjacentHTML('beforeend', content);
 
 /* ---------------------------------------------------------------------------------------------------------------------*/
+
+/* 5-5 for文の繰り返し処理を理解しよう (for文) ---------------------------------------------------------------------------------------------------------------*/
+
+    for (let i = 1; i <=10; i++) {
+        console.log(`${i}回目のこんにちは！`);
+
+    }
+
+    //1回目のこんにちは！
+    //2回目のこんにちは！
+    //3回目のこんにちは！
+    //...........(省略)
+
+/* ----------------------------------------------------------------------------------------------------------------------*/
