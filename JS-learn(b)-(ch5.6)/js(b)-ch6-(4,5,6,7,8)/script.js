@@ -23,7 +23,7 @@
 
     // const keyframes = {
     //     opacity: [0,1],
-    //     translate: ['0 50px', 0]
+    //     translate: ['0 50px', 0]   //浮かび上がる
     // };
 
     // heading.animate(keyframes, 2000);
