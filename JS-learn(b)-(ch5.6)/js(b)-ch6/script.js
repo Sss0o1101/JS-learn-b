@@ -70,7 +70,7 @@
     // const heading = document.querySelector('#heading');
 
     // const keyframes = {
-    //     color: ['#f66', '#fc2', '#0c6', '#0bd']   //文字色を4色用意
+    //     color: ['#f66', '#fc2', '#0c6', '#0bd'],   //文字色を4色用意
     // };
     // const options = {
     //     duration: 8000,
@@ -82,15 +82,37 @@
 
 /* 6-8(3) 背景が伸びる見出しを作る -------------------------------------------*/
 
-const heading = document.querySelector('#heading');
+    // const heading = document.querySelector('#heading');
+
+    // const keyframes = {
+    //     color: ['transparent', '#fff'],          //文字を透明から白に
+    //     backgroundPosition: ['100% 0', '0 0'],   //背景の位置を動かして四角形が伸びた様に見える
+    //  };
+    // const options = {
+    //     duration: 1000,
+    //     easing: 'ease'
+    // };
+
+    // heading.animate(keyframes, options);
+
+/* 6-8(4) ぷよぷよ動く見出しを作る ------------------------------------------------------------------------------------------*/
+
+    const heading = document.querySelector('#heading');
 
     const keyframes = {
-        color: ['transparent', '#fff'],          //文字を透明から白に
-        backgroundPosition: ['100% 0', '0 0'],   //背景の位置を動かして四角形が伸びた様に見える
-    };
+        borderRadius: [
+            '20% 50% 50% 70%/50% 50% 70% 50%',
+            '50% 20% 50% 50%/40% 40% 60% 60%',   //楕円の半径の大きさを少しずつ変更
+            '50% 40% 20% 40%/40% 50% 50% 80%',
+            '50% 50% 50% 20%/40% 40% 60% 60%',
+        ],
+     };
     const options = {
-        duration: 1000,
-        easing: 'ease'
+        duration: 8000,
+        direction: 'alternate',
+        iterations: Infinity,
     };
 
     heading.animate(keyframes, options);
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
