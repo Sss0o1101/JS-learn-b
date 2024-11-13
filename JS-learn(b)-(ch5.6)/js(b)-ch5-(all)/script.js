@@ -1,5 +1,7 @@
 /* 5-1 作成する画像一覧ページの紹介 (insertAdjacentHTML) ------------------------------------------------------------------------------------------*/
-    insertAdjacentHTMLの説明
+
+    //insertAdjacentHTMLの説明
+    要素.insertAdjacentHTML('挿入位置', 挿入内容);   //'挿入位置'  beforebegin,afterbegin,beforeend,afterend
 
     const menu = document.querySelector('#menu');
     const content = `<div><img src="./images/strawberry.jpg" alt=""></div>`;
