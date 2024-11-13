@@ -8,3 +8,7 @@ body {
 h1 {
     margin: 50vh 0 50vh;
 }
+
+img {
+    max-width: 100%;
+}
