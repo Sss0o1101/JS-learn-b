@@ -56,6 +56,9 @@ querySelector・・・HTMLから任意のidがついた要素を取得する
 
 /* 3-10 カラーピッカーが選んだ色を背景に反映させる -------------------------------------------------------------*/
 
+    //  要素.style.プロパティ名 = 値；
+    //document.body.style.backgroundColor = color.value;    // styleの変更
+
     const text = document.querySelector('#colorText');
     const color = document.querySelector('#colorPicker')
 
@@ -68,7 +71,7 @@ querySelector・・・HTMLから任意のidがついた要素を取得する
     };
 
     //カラーピッカーが変更されたら colorBg を発動させる
-    color.addEventListener("input" , colorBg);      // 全てコメント化
+    color.addEventListener("input" , colorBg);
 
 
 /* 3-11 条件分岐 -------------------------------------------------------------*/
