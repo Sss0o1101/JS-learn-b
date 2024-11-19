@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
       easing: 'ease',
       fill: 'forwards',
     }
-  );  
+  );
 
   // ローディング中テキスト
   loadingText.animate(
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
         opacity: 0,
         offset: 1  //100%
       },
-    ], 
+    ],
     {
       duration: 1200,
       easing: 'ease',
