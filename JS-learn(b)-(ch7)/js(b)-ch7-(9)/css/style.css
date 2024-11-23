@@ -58,7 +58,6 @@ LAYOUT
 /*
 LOADING
 ================================================ */
-/* ----- ↓↓ 追加 ↓↓ ----- */
 #loading {
     background-color: var(--light-grey);
     position: fixed;
@@ -67,7 +66,6 @@ LOADING
     display: grid;
     place-items: center;
 }
-
 #loading-screen {
     background-color: var(--light-green);
     position: fixed;
@@ -75,19 +73,15 @@ LOADING
     z-index: 9998;
     translate: 0 100vh;
 }
-
 #loading p {
     font-size: 2rem;
     font-family: var(--oswald-font);
 }
 
-/* ----- ↑↑ 追加 ↑↑ ----- */
-
-
 /*
 SLIDE MENU
 ================================================ */
-/* ----- ↓↓ 追加 ↓↓ ----- */
+
 /* 開閉ボタン */
 .btn-menu {
     position: fixed;
@@ -101,7 +95,6 @@ SLIDE MENU
     width: 4rem;
     transition: .4s;
 }
-
 .btn-menu svg {
     fill: var(--brown);
     margin-top: .25rem;
@@ -113,7 +106,6 @@ SLIDE MENU
 #menu-close {
     border: 1px solid var(--light-green);
 }
-
 #menu-close svg {
     fill: var(--light-green);
 }
@@ -132,24 +124,19 @@ SLIDE MENU
     font-family: var(--oswald-font);
     translate: 100vw;
 }
-
 .menu-list {
     list-style: none;
 }
-
 .menu-list li {
     margin: 1.5rem 0;
     opacity: 0;
 }
-
 .menu-list a {
     color: var(--light-green);
     text-decoration: none;
     font-size: 2rem;
 }
-
 /* ----- ↑↑ 追加 ↑↑ ----- */
-
 
 /*
 HERO
