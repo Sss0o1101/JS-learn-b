@@ -5,7 +5,6 @@ querySelector・・・HTMLから任意のidがついた要素を取得する
 // console.log("準備完了");
 
 
-
 /* 3-4 -------------------------------------------------------------*/
 // カラーコード : #000000
 
@@ -90,7 +89,7 @@ querySelector・・・HTMLから任意のidがついた要素を取得する
     };
 
     //カラーピッカーが変更されたら colorBg を発動させる
-    color.addEventListener('input', colorBg);        // 全てコメント化
+    color.addEventListener('input', colorBg);
 
 
 /* 3-11(2) 条件分岐 else -------------------------------------------------------------*/
