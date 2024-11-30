@@ -3,13 +3,13 @@
 
     btn.addEventListener('click', () => {
         //クリックされた時の処理
-        document.body.classList.toggle('dark-theme')
+        document.body.classList.toggle('dark-theme');
     });
 
 
     /* メモ
-    add だとクリックされた1回のみ。　
-    toggleだとbodyの要素を取得する為、追加と削除を交互に行う　
+    add だとクリックされた1回のみ。
+    toggleだとbodyの要素を取得する為、追加と削除を交互に行う
     */
 
 
