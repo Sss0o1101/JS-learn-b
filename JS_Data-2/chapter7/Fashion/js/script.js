@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
       easing: 'ease',
       fill: 'forwards',
     }
-  );  
+  );
 
   // ローディング中テキスト
   loadingText.animate(
@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
         opacity: 0,
         offset: 1  //100%
       },
-    ], 
+    ],
     {
       duration: 1200,
       easing: 'ease',
@@ -123,7 +123,7 @@ const animateFade = (entries, obs) => {
       entry.target.animate(
         {
           opacity: [0, 1],
-          filter: ['blur(.4rem)', 'blur(0)'], 
+          filter: ['blur(.4rem)', 'blur(0)'],
           translate: ['0 4rem', 0],
         },
         {
