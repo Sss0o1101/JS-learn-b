@@ -205,6 +205,7 @@
 
 /* 3-11 (2) (オブジェクト)  -------------------------------------------------------------------------------------------------------------------------------*/
 
+    // for...in文
 
     let jsbook = {
         title: 'Javascript入門',
@@ -212,7 +213,12 @@
         stock: 3
     };
 
-    for (let p in jsbook) {
-        console.log(p + '=' + jsbook[p]);
+    // for (let p in jsbook) {
+    //     console.log(p + '=' + jsbook[p]);
+    // }
 
-    }
+    document.querySelector('#title').textContent = jsbook.title;
+    document.querySelector('#price').textContent = `${jsbook.price}円`;
+    document.querySelector('#stock').textContent = jsbook.stock;
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
