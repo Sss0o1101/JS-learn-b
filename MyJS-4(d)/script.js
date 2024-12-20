@@ -216,6 +216,17 @@
 
 /*  mousemoveイベントを使ってみよう  ------------------------------------------------------------------------------------------*/
 
+    // const pElement = document.querySelector('p');
+
+    // document.addEventListener('mousemove', (e) => {
+    //    pElement.textContent = `X: ${e.clientX} Y: ${e.clientY}`;
+    // });
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*  submitイベントを使ってみよう  ------------------------------------------------------------------------------------------*/
+
     // const formElement = document.querySelector('form');
     // const inputElement = document.querySelector('input');
     // const pElement = document.querySelector('p');
