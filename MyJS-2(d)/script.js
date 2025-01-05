@@ -300,3 +300,23 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   // console.log(jiro);
   // console.log(saburo);
   console.log(others);
+
+
+/*
+値をバックアップしておいて、元の値を書き換えるためのコード -----------------------------------------------------------------
+*/
+
+  //数値の場合は書き換えられる
+  // let num = 10;
+  // const numBackup = num;
+  // num = 99;
+  // console.log(num); // 99
+  // console.log(numBackup); // 10
+
+
+  //配列の場合は書き換えられない
+  const nums = [10, 20, 30];
+  const numsBackup = nums;
+  nums[0] = 99;
+  console.log(nums);// [99, 20. 30]
+  console.log(numsBackup); // [10, 20, 30]
