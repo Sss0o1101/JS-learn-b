@@ -28,7 +28,7 @@
 
   const scores = [10, 20, 30, 40, 50];
 
-  for (let i = 0; i <= scores.length; i++) {
+  for (let i = 0; i < scores.length; i++) {
       console.log(scores[i]); // 10 20 30 40 50
   }
 
@@ -109,8 +109,11 @@ forEach()で配列を処理-----------------------------------------------------
   delete scores.english;  //英語の点数(プロパティ)の削除
 
 /*
-オブジェクトと反復処理を組み合わせる------------------------------------------------------------------
+Object.entries();  オブジェクトと反復処理を組み合わせる------------------------------------------------------------------
 */
+
+  //オブジェクトにはfoeEachは使えない
+  //Object.entries(); ・・・ オブジェクトを配列に変換
 
   const scores = {math: 80, english: 90};
 
@@ -118,10 +121,8 @@ forEach()で配列を処理-----------------------------------------------------
   console.log(entries);   // [Array(2),Array(2)]
 
   entries.forEach((prop) => {
-
       console.log(prop);  // ['math', 80] ['english', 90]
       console.log(`${prop[0]}: ${prop[1]}`);  // math: 80  english: 90
-
   });
 
 /*
@@ -134,14 +135,14 @@ Object.entries()を使ってプロパティの値を集計(点数の合計と平
 
   scores.physics =70;
 
-  const Entries = Object.entries(scores)
-  Entries.forEach((prop) =>{
+  const entries = Object.entries(scores)
+  entries.forEach((prop) =>{
       Sum += prop[1];
       console.log(`${prop[0]} ${prop[1]}`);
   })
 
   console.log(`Sum: ${Sum}`);   // Sum: 240
-  console.log(`Average: ${Sum / Entries.length}`);  //Average: 80
+  console.log(`Average: ${Sum / entries.length}`);  //Average: 80
 
 
 
@@ -149,6 +150,8 @@ Object.entries()を使ってプロパティの値を集計(点数の合計と平
 /*
 splice()の挙動-----------------------------------------------------------------
 */
+
+  //splice()・・・配列で途中の要素を削除したり、途中に要素を挿入する場合
 
   const scores = [70, 90, 80, 85];
   scores.splice(2, 0, 77, 88);  // [70, 90, 77, 88, 80, 85]
@@ -235,3 +238,20 @@ filter()「配列から条件に合致した要素だけを取り出して新し
 /*
 分割代入での値の入替え方法-----------------------------------------------------------------
 */
+
+  let start = 'Tokyo';
+  let goal = 'Osaka';
+
+  // start = goal; // start = Osaka
+  // goal = start; // goal = Osaka
+
+  // let temp = '';
+  // temp = start;
+  // start = goal;
+  // goal = temp;
+
+  [goal, start] = [start, goal];
+
+  console.log(start);
+  console.log(goal);
+
