@@ -72,5 +72,19 @@
 
 /* 文字列の一部を置換したり、区切り文字で分割する方法  ------------------------------------------------------------------------------------------*/
 
-  //replace()・・・  //replaceAll()
-  //split()・・・
+  //replace()・・・文字列の一部を置換  //replaceAll()
+  //split()・・・区切り文字で分割
+
+   const emails = [
+    'taro@example.com',
+    'kintaro@example.com',
+    'kojiro@example.com',
+  ];
+
+  emails.forEach((email) => {
+    // console.log(email.replace('@example.com', ''));
+    const items = email.split('@');
+    console.log(items[0]);
+  });
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
