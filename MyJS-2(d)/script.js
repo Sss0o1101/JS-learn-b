@@ -320,3 +320,22 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   nums[0] = 99;
   console.log(nums);// [99, 20. 30]
   console.log(numsBackup); // [10, 20, 30]
+
+
+/*
+スプレッド構文を使って配列のコピーを作る方法 -----------------------------------------------------------------
+*/
+
+  // let num = 10;
+  // const numBackup = num;
+  // num = 99;
+  // console.log(num); // 99
+  // console.log(numBackup); // 10
+
+  const nums = [10, 20, 30];
+  // const numsBackup = nums;
+  // const numsBackup = [10, 20, 30];   //これでもいいが
+  const numsBackup = [...nums];         //スプレッド構文を使う
+  nums[0] = 99;
+  console.log(nums);// [99, 20. 30]
+  console.log(numsBackup); // [10, 20, 30]
