@@ -277,3 +277,26 @@ filter()「配列から条件に合致した要素だけを取り出して新し
 
   console.log(first);
   console.log(others);
+
+
+/*
+オブジェクトに対して分割代入、レスト構文、スプレッド構文 -----------------------------------------------------------------
+*/
+
+  const moreScores = {
+    shiro: 77,
+    goro: 88,
+  };
+  const scores = {
+    taro: 80,
+    jiro: 70,
+    saburo: 90,
+    ...moreScores,
+  };
+  // const {taro, jiro, saburo} = scores;
+  const {taro, ...others} = scores;
+
+  console.log(taro);
+  // console.log(jiro);
+  // console.log(saburo);
+  console.log(others);
