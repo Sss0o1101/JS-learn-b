@@ -263,8 +263,8 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   const scores = [70, 90, 80, 85];
   const [first, ...others] = scores;
 
-  console.log(first);
-  console.log(others);
+  console.log(first);  //70
+  console.log(others); //[90,80,85]
 
 
 /*
@@ -275,8 +275,8 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   const scores = [70, 90, 80, 85, ...moreScores];
   const [first, ...others] = scores;
 
-  console.log(first);
-  console.log(others);
+  console.log(first);  //70
+  console.log(others); //[90,80,85,77,88]
 
 
 /*
@@ -296,10 +296,10 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   // const {taro, jiro, saburo} = scores;
   const {taro, ...others} = scores;
 
-  console.log(taro);
+  console.log(taro);   //80
   // console.log(jiro);
   // console.log(saburo);
-  console.log(others);
+  console.log(others); //{jiro: 70, saburo: 90, shiro: 77, goro: 88 }
 
 
 /*
@@ -319,7 +319,7 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   const numsBackup = nums;
   nums[0] = 99;
   console.log(nums);// [99, 20. 30]
-  console.log(numsBackup); // [10, 20, 30]
+  console.log(numsBackup); // [99, 20. 30]
 
 
 /*
