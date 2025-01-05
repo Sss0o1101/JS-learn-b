@@ -255,3 +255,13 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   console.log(start);
   console.log(goal);
 
+
+/*
+レスト構文で余った要素をまとめて受け取る -----------------------------------------------------------------
+*/
+
+  const scores = [70, 90, 80, 85];
+  const [first, ...others] = scores;
+
+  console.log(first);
+  console.log(others);
