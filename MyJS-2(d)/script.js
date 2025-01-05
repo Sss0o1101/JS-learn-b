@@ -265,3 +265,15 @@ filter()「配列から条件に合致した要素だけを取り出して新し
 
   console.log(first);
   console.log(others);
+
+
+/*
+スプレッド構文で配列から要素を取り出す -----------------------------------------------------------------
+*/
+
+  const moreScores = [77, 88];
+  const scores = [70, 90, 80, 85, ...moreScores];
+  const [first, ...others] = scores;
+
+  console.log(first);
+  console.log(others);
