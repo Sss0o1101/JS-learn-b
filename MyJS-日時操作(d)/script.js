@@ -92,3 +92,20 @@
 
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 配列やpadStart()を用いて、日時データを好きな形式で出力する方法 ------------------------------------------------------------------------------------------*/
+
+  const Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const Days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  //2001年1月11日のデータ
+  const n = new Date(2001, 0, 1);
+
+  // January 01, Monday と表示           しかし、getMonth() や getDate() は、0 から始まる数値であって、こうした月や曜日の名前ではない。
+  const Month =  Months[n.getMonth()];
+  const nDate = n.getDate();
+  const Day = Days[n.getDay()];
+
+  console.log(`${Month} ${nDate} ${Day}`);
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
