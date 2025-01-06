@@ -7,7 +7,7 @@
 
     // //別の書き方
     // const submit = document.querySelector('#form');
-    // submit.addEventListener('submit', () => {
+    // submit.addEventListener('submit', (event) => {
     //     event.preventDefault(); // フォームのデフォルトの送信を防ぐ
     //     console.log('クリックされました');
     // });
@@ -48,4 +48,3 @@
     time.textContent = output;
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
-
