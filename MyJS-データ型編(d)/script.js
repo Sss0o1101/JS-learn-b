@@ -34,20 +34,59 @@
 /* ifの条件分岐では真偽値が期待されているので、真偽値そのものを渡して処理する方法 ------------------------------------------------------------------------------------------*/
 
 
+  {
+
+    let isDevMode = true;
+    const pElement = document.querySelector('p');
+    const btnElement = document.querySelector('button');
+
+    btnElement.addEventListener('click', () => {
+      if(confirm('Are you sure?') === true) {
+        if (isDevMode) {
+          pElement.textContent = 'Dev Mode is Off.';
+        } else {
+          pElement.textContent = 'Dev Mode is On.';
+        }
+        isDevMode = !isDevMode
+      }
+    });
+
+  }
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 関数の処理を途中で抜けることができる早期リターンに真偽値を使う方法を見ていく。 ------------------------------------------------------------------------------------------*/
 
   let isDevMode = true;
   const pElement = document.querySelector('p');
   const btnElement = document.querySelector('button');
 
   btnElement.addEventListener('click', () => {
-    if(confirm('Are you sure?') === true) {
-      if (isDevMode) {
-        pElement.textContent = 'Dev Mode is Off.';
-      } else {
-        pElement.textContent = 'Dev Mode is On.';
-      }
-      isDevMode = !isDevMode
+    // if(confirm('Are you sure?') === false) {
+    if(!confirm('Are you sure?')) {             //同じ意味
+      return;
     }
+
+    if (isDevMode) {
+      pElement.textContent = 'Dev Mode is Off.';
+    } else {
+      pElement.textContent = 'Dev Mode is On.';
+    }
+    isDevMode = !isDevMode
+
   });
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* ifの条件分岐で値そのものを渡す方法について見ていきます。 ------------------------------------------------------------------------------------------*/
+
+  const userName = prompt('Your name?');
+
+  // if (userName !== '') {
+  if (userName) {
+    console.log(`Hi, ${userName}`);
+  } else {
+    console.log(`Hi, nobody!`);
+
+  }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
