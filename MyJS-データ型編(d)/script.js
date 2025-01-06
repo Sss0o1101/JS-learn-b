@@ -92,7 +92,7 @@
 
 /* 定義されていない値であるundefinedの使い方 ------------------------------------------------------------------------------------------*/
 
-  // undefined
+  // undefined ・・・定義されていない値という意味
 
   // let x;
   // console.log(x);            // undefined
@@ -100,10 +100,27 @@
   // const scores = [70, 90, 80];
   // console.log(scores[100]);  // undefined
 
-  const score = {math: 80, english: 90};
-  // console.log(score.history);
-  if (score.history === undefined) {
-    console.log('History score not defined!');
+  {
+    const score = {math: 80, english: 90};
+    // console.log(score.history);
+    if (score.history === undefined) {
+      console.log('History score not defined!');
+    }
+  }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 明示的に「何もないこと」を示すために使われるnull ------------------------------------------------------------------------------------------*/
+
+  // null・・・何もないという意味
+
+  const score = {
+    math: 80,
+    english: 90,
+    physics: null,
+  };
+  if (score.physics === null) {
+    console.log('Physics score is null!');
   }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
