@@ -99,21 +99,58 @@
 
 /* UserクラスにgetUserString()というメソッドを定義する方法 ------------------------------------------------------------------------------------------*/
 
+  //name と score を 2 行ではなくて、1 行でまとめて表示したい場合。
+  //そのための文字列を作るメソッドを定義
+
+  {
+    class User {
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+
+      getUserString() {
+        return `${this.name} ${this.score}`;
+      }
+    }
+
+    const user1 = new User('Taro',70);
+    const user2 = new User('Jiro',80);
+
+    console.log(user1.getUserString());  //Taro 70
+    console.log(user2.getUserString());  //jiro 80
+  }
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* データを拡張するために、さらにクラスを作って組み合わせていく方法
+  Scoreクラスを修正して、前回おかしかった表示を直していきます------------------------------------------------------------------------------------------*/
+
+  class Score {
+    constructor(subject, result) {
+      this.subject = subject;
+      this.result = result;
+    }
+
+    getScoreString () {
+      return `${this.subject} ${this.result}`;
+    }
+  }
+
   class User {
     constructor (name, score) {
       this.name = name;
       this.score = score;
     }
-
     getUserString() {
-      return `${this.name} ${this.score}`;
+      // return `${this.name} ${this.score}`;
+      // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
+      return `${this.name} ${this.score.getScoreString()}`;
     }
   }
 
-  const user1 = new User('Taro',70);
-  const user2 = new User('Jiro',80);
+  //こちらの点数に科目の情報も含めたくなったので、Score というデータ型を作ってプログラムを拡張
+  const user1 = new User('Taro', new Score('Math', 70));
+  const user2 = new User('Jiro', new Score('English', 80) );
 
-  console.log(user1.getUserString());  //Taro 70
-  console.log(user2.getUserString());  //jiro 80
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+  console.log(user1.getUserString());  //Taro Math 70
+  console.log(user2.getUserString());  //jiro English 80
