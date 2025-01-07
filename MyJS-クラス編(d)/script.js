@@ -125,6 +125,44 @@
 /* データを拡張するために、さらにクラスを作って組み合わせていく方法
   Scoreクラスを修正して、前回おかしかった表示を直していきます------------------------------------------------------------------------------------------*/
 
+  {
+    class Score {
+      constructor(subject, result) {
+        this.subject = subject;
+        this.result = result;
+      }
+
+      getScoreString () {
+        return `${this.subject} ${this.result}`;
+      }
+    }
+
+    class User {
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+      getUserString() {
+        // return `${this.name} ${this.score}`;
+        // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
+        return `${this.name} ${this.score.getScoreString()}`;
+      }
+    }
+
+    //こちらの点数に科目の情報も含めたくなったので、Score というデータ型を作ってプログラムを拡張
+    const user1 = new User('Taro', new Score('Math', 70));
+    const user2 = new User('Jiro', new Score('English', 80) );
+
+    console.log(user1.getUserString());  //Taro Math 70
+    console.log(user2.getUserString());  //jiro English 80
+  }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 点数に応じて判定結果も表示できるようにScoreクラスを拡張していきます。 ------------------------------------------------------------------------------------------*/
+
+  //「Taro Math 70」「jiro English 80」これらの点数に応じて A 判定、B 判定といった表示もしたくなった場合。
+
   class Score {
     constructor(subject, result) {
       this.subject = subject;
@@ -132,7 +170,13 @@
     }
 
     getScoreString () {
-      return `${this.subject} ${this.result}`;
+      let grate;   //gradeはここで宣言されて、この辺りで使われるだけのメソッド内で使い捨てる、ただの変数のためthisは不要。
+      if (this.result >= 80) {
+        grate = 'A';
+      } else {
+        grate = 'B';
+      }
+      return `${this.subject} ${this.result} ${grate}`;  //grateの追加
     }
   }
 
@@ -154,6 +198,3 @@
 
   console.log(user1.getUserString());  //Taro Math 70
   console.log(user2.getUserString());  //jiro English 80
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
-
