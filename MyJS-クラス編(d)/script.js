@@ -163,20 +163,69 @@
 
   //「Taro Math 70」「jiro English 80」これらの点数に応じて A 判定、B 判定といった表示もしたくなった場合。
 
-  class Score {
+  {
+    class Score {
+      constructor(subject, result) {
+        this.subject = subject;
+        this.result = result;
+      }
+
+      getScoreString () {
+        let grade;   //gradeはここで宣言されて、この辺りで使われるだけのメソッド内で使い捨てる、ただの変数のためthisは不要。
+        if (this.result >= 80) {
+          grade = 'A';
+        } else {
+          grade = 'B';
+        }
+        return `${this.subject} ${this.result} ${grade}`;  //gradeの追加
+      }
+    }
+
+    class User {
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+      getUserString() {
+        // return `${this.name} ${this.score}`;
+        // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
+        return `${this.name} ${this.score.getScoreString()}`;
+      }
+    }
+
+    //こちらの点数に科目の情報も含めたくなったので、Score というデータ型を作ってプログラムを拡張
+    const user1 = new User('Taro', new Score('Math', 70));
+    const user2 = new User('Jiro', new Score('English', 80) );
+
+    console.log(user1.getUserString());  //Taro Math 70
+    console.log(user2.getUserString());  //jiro English 80
+  }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 前回の判定処理を別メソッドとして切り出す方法 ------------------------------------------------------------------------------------------*/
+
+class Score {
     constructor(subject, result) {
       this.subject = subject;
       this.result = result;
     }
 
+    //grade を求める処理を作成
+    getGrade () {
+      // let grade;
+      // if (this.result >= 80) {
+      //   grade = 'A';
+      // } else {
+      //   grade = 'B';
+      // }
+      // return grade;
+
+      return this.result >= 80 ? 'A' : 'B';  //簡単に書ける
+    }
+
     getScoreString () {
-      let grate;   //gradeはここで宣言されて、この辺りで使われるだけのメソッド内で使い捨てる、ただの変数のためthisは不要。
-      if (this.result >= 80) {
-        grate = 'A';
-      } else {
-        grate = 'B';
-      }
-      return `${this.subject} ${this.result} ${grate}`;  //grateの追加
+      return `${this.subject} ${this.result} ${this.getGrade()}`;  //gradeの追加 //メソッドから同じクラス内に定義されたメソッドを使うには、this. を付ける必要がある。
     }
   }
 
