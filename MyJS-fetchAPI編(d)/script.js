@@ -21,31 +21,56 @@
 
 /* fetch()を使ってJSONデータを取得する方法 ------------------------------------------------------------------------------------------*/
 
-  {
+  // {
 
-    function showHeader() {
-      console.log('Header');
-    }
+  //   function showHeader() {
+  //     console.log('Header');
+  //   }
 
-    function showUsers() {
-      const response = fetch('https://dotinstall.github.io/setup/fetchapi/users.json');
-      console.log(response);
-    }
+  //   function showUsers() {
+  //     const response = fetch('https://dotinstall.github.io/setup/fetchapi/users.json');
+  //     console.log(response);
+  //   }
 
-    function showFooter() {
-      console.log('Footer');
-    }
+  //   function showFooter() {
+  //     console.log('Footer');
+  //   }
 
-    showHeader();
-    showUsers();
-    showFooter();
+  //   showHeader();
+  //   showUsers();
+  //   showFooter();
 
-  }
+  // }
 
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/*非同期処理でよく使われる、async、await、json()の使い方 ------------------------------------------------------------------------------------------*/
+/* 非同期処理でよく使われる、async、await、json()の使い方 ------------------------------------------------------------------------------------------*/
+
+  // function showHeader() {
+  //   console.log('Header');
+
+  // }
+
+  // async function showUsers() {
+  //   const response = await fetch('https://dotinstall.github.io/setup/fetchapi/users.json')
+  //   const users = await response.json();
+  //   console.log(users);
+
+  // }
+
+  // function showFooter() {
+  //   console.log('Footer');
+
+  // }
+
+  // showHeader();
+  // showUsers();
+  // showFooter();
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 非同期処理が失敗した場合の処理を書く方法 try ... catch ------------------------------------------------------------------------------------------*/
 
   function showHeader() {
     console.log('Header');
@@ -53,9 +78,15 @@
   }
 
   async function showUsers() {
-    const response = await fetch('https://dotinstall.github.io/setup/fetchapi/users.json')
-    const users = await response.json();
-    console.log(users);
+    try {
+      const response = await fetch('https://dotinstall.github.io/setup/fetchapi/invalid-users.json')  //不具合が起きるurl
+      const users = await response.json();
+      console.log(users);
+    } catch (error) {
+      console.log('Something went wrong getting user data');
+      console.log(`Error log ${error}`);
+      // console.log('Error log: ' + error);
+    }
 
   }
 
@@ -67,3 +98,5 @@
   showHeader();
   showUsers();
   showFooter();
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
