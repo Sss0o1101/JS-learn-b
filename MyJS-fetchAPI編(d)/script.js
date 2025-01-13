@@ -72,23 +72,93 @@
 
 /* 非同期処理が失敗した場合の処理を書く方法 try ... catch ------------------------------------------------------------------------------------------*/
 
+  // {
+
+  //   function showHeader() {
+  //     console.log('Header');
+
+  //   }
+
+  //   async function showUsers() {
+  //     try {
+  //       const response = await fetch('https://dotinstall.github.io/setup/fetchapi/invalid-users.json')//不具合が起きるurl
+  //       const users = await response.json();
+  //       console.log(users);
+  //     } catch (error) {
+  //       console.log('Something went wrong getting user data');
+  //       console.log(`Error log ${error}`);
+  //       // console.log('Error log: ' + error);
+  //     }
+
+  //   }
+
+  //   function showFooter() {
+  //     console.log('Footer');
+
+  //   }
+
+  //   showHeader();
+  //   showUsers();
+  //   showFooter();
+
+  // }
+
+
+  // // ---------------- 動作するurlのコピー -----------------
+  // {
+
+  //   function showHeader() {
+  //     console.log('Header');
+
+  //   }
+
+  //   async function showUsers() {
+  //     try {
+  //       const response = await fetch('https://dotinstall.github.io/setup/fetchapi/users.json')//動作するurlに変更
+  //       const users = await response.json();
+  //       console.log(users);
+  //     } catch (error) {
+  //       console.log('Something went wrong getting user data');
+  //       console.log(`Error log ${error}`);
+  //       // console.log('Error log: ' + error);
+  //     }
+
+  //   }
+
+  //   function showFooter() {
+  //     console.log('Footer');
+
+  //   }
+
+  //   showHeader();
+  //   showUsers();
+  //   showFooter();
+
+  // }
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* asyncをつけた関数を関数式で定義する方法 ------------------------------------------------------------------------------------------*/
+
   function showHeader() {
     console.log('Header');
 
   }
 
-  async function showUsers() {
+
+  const showUsers = async () => {
     try {
-      const response = await fetch('https://dotinstall.github.io/setup/fetchapi/invalid-users.json')  //不具合が起きるurl
+      const response = await fetch('https://dotinstall.github.io/setup/fetchapi/users.json')//動作するurlに変更
       const users = await response.json();
       console.log(users);
     } catch (error) {
       console.log('Something went wrong getting user data');
       console.log(`Error log ${error}`);
-      // console.log('Error log: ' + error);
     }
+  };
 
-  }
 
   function showFooter() {
     console.log('Footer');
