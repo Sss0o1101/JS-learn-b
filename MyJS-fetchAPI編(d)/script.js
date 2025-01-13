@@ -19,15 +19,43 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* fetch()の仕組みとPromiseについて ------------------------------------------------------------------------------------------*/
+/* fetch()を使ってJSONデータを取得する方法 ------------------------------------------------------------------------------------------*/
+
+  {
+
+    function showHeader() {
+      console.log('Header');
+    }
+
+    function showUsers() {
+      const response = fetch('https://dotinstall.github.io/setup/fetchapi/users.json');
+      console.log(response);
+    }
+
+    function showFooter() {
+      console.log('Footer');
+    }
+
+    showHeader();
+    showUsers();
+    showFooter();
+
+  }
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*非同期処理でよく使われる、async、await、json()の使い方 ------------------------------------------------------------------------------------------*/
 
   function showHeader() {
     console.log('Header');
 
   }
 
-  function showUsers() {
-    console.log('Users');
+  async function showUsers() {
+    const response = await fetch('https://dotinstall.github.io/setup/fetchapi/users.json')
+    const users = await response.json();
+    console.log(users);
 
   }
 
@@ -39,7 +67,3 @@
   showHeader();
   showUsers();
   showFooter();
-
-
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
