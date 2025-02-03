@@ -270,14 +270,6 @@
 
     //grade を求める処理を作成
     getGrade () {
-      // let grade;
-      // if (this.result >= 80) {
-      //   grade = 'A';
-      // } else {
-      //   grade = 'B';
-      // }
-      // return grade;
-
       return this.result >= 80 ? 'A' : 'B';  //簡単に書ける //条件演算子
     }
 
@@ -298,10 +290,9 @@
     }
   }
 
-  //こちらの点数に科目の情報も含めたくなったので、Score というデータ型を作ってプログラムを拡張
+
   const user1 = new User('Taro', new Score('Math', 70));
   const user2 = new User('Jiro', new Score('English', 80) );
 
-  console.log(user1.getUserString());  //Taro Math 70
-  console.log(user2.getUserString());  //jiro English 80
-
+  console.log(user1.getUserString());
+  console.log(user2.getUserString());
