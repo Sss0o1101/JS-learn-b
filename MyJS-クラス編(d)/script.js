@@ -87,12 +87,12 @@
       rank: 'A',
     });
 
-    console.log(user1.name);
-    console.log(user1.score);
-    console.log(user1.rank);
-    console.log(user2.name);
-    console.log(user2.score);
-    console.log(user2.rank);
+    console.log(user1.name);  //Hanako
+    console.log(user1.score); //70
+    console.log(user1.rank);  //B
+    console.log(user2.name);  //Jiro
+    console.log(user2.score); //80
+    console.log(user2.rank);  //A
   }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -205,6 +205,63 @@
 
 /* 前回の判定処理を別メソッドとして切り出す方法 ------------------------------------------------------------------------------------------*/
 
+  {
+
+    class Score {
+      constructor(subject, result) {
+        this.subject = subject;
+        this.result = result;
+      }
+
+      //grade を求める処理を作成
+      getGrade () {
+        // let grade;
+        // if (this.result >= 80) {
+        //   grade = 'A';
+        // } else {
+        //   grade = 'B';
+        // }
+        // return grade;
+
+        return this.result >= 80 ? 'A' : 'B';  //簡単に書ける //条件演算子
+      }
+
+      getScoreString () {
+        return `${this.subject} ${this.result} ${this.getGrade()}`;  //gradeの追加 //メソッドから同じクラス内に定義されたメソッドを使うには、this. を付ける必要がある。
+      }
+    }
+
+    class User {
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+      getUserString() {
+        // return `${this.name} ${this.score}`;
+        // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
+        return `${this.name} ${this.score.getScoreString()}`;
+      }
+    }
+
+    //こちらの点数に科目の情報も含めたくなったので、Score というデータ型を作ってプログラムを拡張
+    const user1 = new User('Taro', new Score('Math', 70));
+    const user2 = new User('Jiro', new Score('English', 80) );
+
+    console.log(user1.getUserString());  //Taro Math 70
+    console.log(user2.getUserString());  //jiro English 80
+
+  }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* あるクラスをもとに別のクラスを作ることができる、クラスの継承について
+  Scoreクラスをもとに、MathScoreクラス、EnglishScoreクラスを作る方法 ------------------------------------------------------------------------------------------*/
+
+  //ここで科目ごとに A 判定、B 判定の基準を変えたくなった場合。
+  //例えば、数学については 50 点以上が A 判定、英語については 70 点以上が A 判定
+  //その場合、こちらの getGrade の中で、subject をもとにさらに条件分岐をしてもいいのですが、クラスの継承という仕組みを使う。
+
+
   class Score {
     constructor(subject, result) {
       this.subject = subject;
@@ -221,7 +278,7 @@
       // }
       // return grade;
 
-      return this.result >= 80 ? 'A' : 'B';  //簡単に書ける
+      return this.result >= 80 ? 'A' : 'B';  //簡単に書ける //条件演算子
     }
 
     getScoreString () {
@@ -248,11 +305,3 @@
   console.log(user1.getUserString());  //Taro Math 70
   console.log(user2.getUserString());  //jiro English 80
 
-/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* あるクラスをもとに別のクラスを作ることができる、クラスの継承について
-  Scoreクラスをもとに、MathScoreクラス、EnglishScoreクラスを作る方法 ------------------------------------------------------------------------------------------*/
-
-  //ここで科目ごとに A 判定、B 判定の基準を変えたくなった場合。
-  //例えば、数学については 50 点以上が A 判定、英語については 70 点以上が A 判定
-  //その場合、こちらの getGrade の中で、subject をもとにさらに条件分岐をしてもいいのですが、クラスの継承という仕組みを使う。
