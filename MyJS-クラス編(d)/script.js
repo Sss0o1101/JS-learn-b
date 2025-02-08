@@ -316,6 +316,7 @@
     console.log(user2.getUserString());  //jiro English 80 A
   }
 
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* メソッドのオーバーライド (子クラスで独自の判定ロジックを実装していく方法) ------------------------------------------------------------------------------------------*/
 
@@ -327,7 +328,7 @@
 
     //grade を求める処理を作成
     getGrade () {
-      return this.result >= 80 ? 'A' : 'B';  //簡単に書ける //条件演算子
+      return this.result >= 80 ? 'A' : 'B';
     }
 
     getScoreString () {
@@ -335,14 +336,19 @@
     }
   }
 
-  //Scoreの子クラス
+  //Scoreの子クラス(Math)
   class MathScore extends Score {
     constructor(result) {
       super('Math', result);
-
     }
+
+    //子クラスの方で、親クラスと同じ名前のメソッドを上書きすることを、メソッドのオーバーライドと呼ぶ。
+    getGrade () {
+      return this.result >= 50 ? 'A' : 'B';
+    }
+
   }
-  //Scoreの子クラス
+  //Scoreの子クラス(English)
   class EnglishScore extends Score {
     constructor(result) {
       super('English', result);
@@ -357,8 +363,6 @@
       this.score = score;
     }
     getUserString() {
-      // return `${this.name} ${this.score}`;
-      // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
       return `${this.name} ${this.score.getScoreString()}`;
     }
   }
@@ -367,5 +371,8 @@
   const user1 = new User('Taro', new MathScore(70));
   const user2 = new User('Jiro', new EnglishScore(80));
 
-  console.log(user1.getUserString());  //Taro Math 70 B
+  console.log(user1.getUserString());  //Taro Math 70 A
   console.log(user2.getUserString());  //jiro English 80 A
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
