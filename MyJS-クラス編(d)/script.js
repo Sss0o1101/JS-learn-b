@@ -257,6 +257,8 @@
 /* あるクラスをもとに別のクラスを作ることができる、クラスの継承について
   Scoreクラスをもとに、MathScoreクラス、EnglishScoreクラスを作る方法 ------------------------------------------------------------------------------------------*/
 
+  //extends  //super()
+
   //ここで科目ごとに A 判定、B 判定の基準を変えたくなった場合。
   //例えば、数学については 50 点以上が A 判定、英語については 70 点以上が A 判定
   //その場合、こちらの getGrade の中で、subject をもとにさらに条件分岐をしてもいいのですが、クラスの継承という仕組みを使う。
@@ -278,6 +280,22 @@
     }
   }
 
+  //Scoreの子クラス
+  class MathScore extends Score {
+    constructor(result) {
+      super('Math', result);
+
+    }
+  }
+  //Scoreの子クラス
+  class EnglishScore extends Score {
+    constructor(result) {
+      super('English', result);
+
+    }
+  }
+
+
   class User {
     constructor (name, score) {
       this.name = name;
@@ -291,8 +309,8 @@
   }
 
 
-  const user1 = new User('Taro', new Score('Math', 70));
-  const user2 = new User('Jiro', new Score('English', 80) );
+  const user1 = new User('Taro', new MathScore(70));
+  const user2 = new User('Jiro', new EnglishScore(80));
 
   console.log(user1.getUserString());
   console.log(user2.getUserString());
