@@ -247,8 +247,8 @@
     const user1 = new User('Taro', new Score('Math', 70));
     const user2 = new User('Jiro', new Score('English', 80) );
 
-    console.log(user1.getUserString());  //Taro Math 70
-    console.log(user2.getUserString());  //jiro English 80
+    console.log(user1.getUserString());  //Taro Math 70 B
+    console.log(user2.getUserString());  //jiro English 80 A
 
   }
 
@@ -263,6 +263,61 @@
   //例えば、数学については 50 点以上が A 判定、英語については 70 点以上が A 判定
   //その場合、こちらの getGrade の中で、subject をもとにさらに条件分岐をしてもいいのですが、クラスの継承という仕組みを使う。
 
+  {
+    class Score {
+      constructor(subject, result) {
+        this.subject = subject;
+        this.result = result;
+      }
+
+      //grade を求める処理を作成
+      getGrade () {
+        return this.result >= 80 ? 'A' : 'B';  //簡単に書ける //条件演算子
+      }
+
+      getScoreString () {
+        return `${this.subject} ${this.result} ${this.getGrade()}`;  //gradeの追加 //メソッドから同じクラス内に定義されたメソッドを使うには、this. を付ける必要がある。
+      }
+    }
+
+    //Scoreの子クラス
+    class MathScore extends Score {
+      constructor(result) {
+        super('Math', result);
+
+      }
+    }
+    //Scoreの子クラス
+    class EnglishScore extends Score {
+      constructor(result) {
+        super('English', result);
+
+      }
+    }
+
+
+    class User {
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+      getUserString() {
+        // return `${this.name} ${this.score}`;
+        // return `${this.name} ${this.score.subject} ${this.score.result}`; // 修正点: 科目と点数を表示
+        return `${this.name} ${this.score.getScoreString()}`;
+      }
+    }
+
+
+    const user1 = new User('Taro', new MathScore(70));
+    const user2 = new User('Jiro', new EnglishScore(80));
+
+    console.log(user1.getUserString());  //Taro Math 70 B
+    console.log(user2.getUserString());  //jiro English 80 A
+  }
+
+
+/* メソッドのオーバーライド (子クラスで独自の判定ロジックを実装していく方法) ------------------------------------------------------------------------------------------*/
 
   class Score {
     constructor(subject, result) {
@@ -312,5 +367,5 @@
   const user1 = new User('Taro', new MathScore(70));
   const user2 = new User('Jiro', new EnglishScore(80));
 
-  console.log(user1.getUserString());
-  console.log(user2.getUserString());
+  console.log(user1.getUserString());  //Taro Math 70 B
+  console.log(user2.getUserString());  //jiro English 80 A
