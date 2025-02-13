@@ -378,58 +378,62 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* フィールドの設定 ------------------------------------------------------------------------------------------*/
+/* フィールドの設定 --------------------------------------------------------------------------------------------------------------------------------*/
 
-  class Score {
-    constructor(subject, result) {
-      this.subject = subject;
-      this.result = result;
+  //フィールド・・・クラスの最初に羅列するプロパティとなる変数のことで、プロパティの一覧を先頭に書くことで、クラスの構造を分かりやすくするという効果がある。
+
+  {
+    class User {
+      //フィールド
+      name;
+      score;
+
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+      getUserString() {
+        return `${this.name} ${this.score}`;
+      }
     }
 
-    //grade を求める処理を作成
-    getGrade () {
-      return this.result >= 80 ? 'A' : 'B';
-    }
 
-    getScoreString () {
-      return `${this.subject} ${this.result} ${this.getGrade()}`;  //gradeの追加 //メソッドから同じクラス内に定義されたメソッドを使うには、this. を付ける必要がある。
-    }
+    const user1 = new User('Taro', 70);
+    const user2 = new User('Jiro', 80);
+
+    console.log(user1.getUserString());  //Taro 70
+    console.log(user2.getUserString());  //Jiro 80
   }
 
-  //Scoreの子クラス(Math)
-  class MathScore extends Score {
-    constructor(result) {
-      super('Math', result);
-    }
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-    //子クラスの方で、親クラスと同じ名前のメソッドを上書きすることを、メソッドのオーバーライドと呼ぶ。
-    getGrade () {
-      return this.result >= 50 ? 'A' : 'B';
-    }
+/* 静的プロパティを設定する方法 --------------------------------------------------------------------------------------------------------------------------------*/
 
-  }
-  //Scoreの子クラス(English)
-  class EnglishScore extends Score {
-    constructor(result) {
-      super('English', result);
-
-    }
-  }
-
+  //この User クラスからいくつインスタンスが作られたかを表示したくなったとする。
 
   class User {
+    //フィールド
+    name;
+    score;
+    static count =0;  //静的プロパティ
+
     constructor (name, score) {
       this.name = name;
       this.score = score;
+      User.count++;
     }
     getUserString() {
-      return `${this.name} ${this.score.getScoreString()}`;
+      return `${this.name} ${this.score}`;
     }
   }
 
+  //let count = 0;
+  const user1 = new User('Taro', 70);
+  //count++;
+  const user2 = new User('Jiro', 80);
+  //count++;
+  //console.log(count); //2
+  console.log(User.count); //2
 
-  const user1 = new User('Taro', new MathScore(70));
-  const user2 = new User('Jiro', new EnglishScore(80));
-
-  console.log(user1.getUserString());  //Taro Math 70 A
-  console.log(user2.getUserString());  //jiro English 80 A
+  console.log(user1.getUserString());  //Taro 70
+  console.log(user2.getUserString());  //Jiro 80
