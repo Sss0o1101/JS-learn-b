@@ -99,9 +99,14 @@
 
     {
         function calculation(number1, number2) {
-            console.log(`${number1}と${number2}`);
+            //console.log(`${number1}と${number2}`);
+            const plus = number1 + number2;
+            const minus = number1 - number2;
+            console.log(`${number1}+${number2}=${plus}`);
+            console.log(`${number1}-${number2}=${minus}`);
+
         }
-        calculation(1, 3) // 1と3
+        calculation(1, 3) // 1と3 // 1+3=4 // 1-3=-2
     }
 
 
@@ -137,6 +142,15 @@
     }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+/* 定数・変数に関数を代入 ------------------------------------------------------------------------------------------*/
 
+    const myFunc = function message(userName) {
+        console.log(`${userName}が呼び出されました`);
+    }
+    myFunc(iii); // iiiが呼び出されました
 
-/* アロー関数 ------------------------------------------------------------------------------------------*/
+    //無名関数
+     const myFunc2 = function (userName) {
+        console.log(`${userName}が呼び出されました`);
+    }
+    myFunc(iii); // iiiが呼び出されました
