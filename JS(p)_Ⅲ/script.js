@@ -153,4 +153,10 @@
      const myFunc2 = function (userName) {
         console.log(`${userName}が呼び出されました`);
     }
-    myFunc(iii); // iiiが呼び出されました
+    myFunc(eee); // eeeが呼び出されました
+
+    //アロー関数
+    const myFunc3 = (userName) => {
+        console.log(`${userName}が呼び出されました`);
+    }
+    myFunc(ttt); // tttが呼び出されました
