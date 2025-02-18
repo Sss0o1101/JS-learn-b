@@ -130,6 +130,15 @@
 
     console.log(double(10)); //20
 
+
+    const double = num => {
+        return num * 2;
+    };
+    console.log(double(10)); //20
+
+    const double = num => num * 2;
+    console.log(double(10)); //20
+
 /*
 関数を引数にとる関数------------------------------------------------------------------------------------
 */
