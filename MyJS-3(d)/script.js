@@ -142,11 +142,11 @@
 /*
 関数を引数にとる関数------------------------------------------------------------------------------------
 */
-    const calc = (num, func) => {
-        return func(num);
-    }
+    // const calc = (num, func) => {
+    //     return func(num);
+    // }
 
-    (calc(20, double)); //20
+    // (calc(20, double)); //20
 
     {
         const double = (num) => {
