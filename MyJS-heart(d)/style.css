@@ -1,17 +1,22 @@
 @charset "UTF-8";
 
-/* classList ----------------------------------*/
 
-/* .pink-bg {
-    background: pink;
+body {
+    user-select: none;
 }
 
-.red-border {
-    border: 2px solid red;
+i {
+    color: red;
+    font-size: 20px;
+    margin-right: 4px;
+    cursor: pointer;
 }
 
-.green-color {
-    color: green;
-} */
+i.large {
+    font-size: 32px;
+}
 
-/* ------------------------------------------- */
+span {
+    font-size: 20px;
+    color: #aaa;
+}
