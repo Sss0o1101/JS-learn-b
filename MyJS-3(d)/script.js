@@ -147,3 +147,20 @@
     }
 
     (calc(20, double)); //20
+
+    {
+        const double = (num) => {
+            return num * 2;
+        };
+
+        const calc = (num, func) => {
+            return func(num);
+        };
+
+        (calc(20, double)); //20
+
+        // console.log(calc(20, double));
+        console.log(calc(20, (num) => {
+            return num * 2;
+        }));
+    }
