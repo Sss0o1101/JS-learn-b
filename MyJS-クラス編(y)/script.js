@@ -63,7 +63,21 @@
   const $elm = document.querySelector('#js-accordion');
   const $trigger = $elm.getElementsByTagName('a');
 
+  // リファクタリング
+  const $triggerLength = $trigger.length;
+  // for (let i = 0; i < $triggerLength; i++) {
+  //   $trigger[i].addEventListener('click', (e) => clickHandler(e));
+  // }
+  let index = 0;
+  while (index < $triggerLength) {
+    $trigger[index].addEventListener('click', (e) => clickHandler(e));
+    index++;
+  }
+
+
   $trigger[0].addEventListener('click', (e) => clickHandler(e));
+
+  //クリックされた時の処理
   const clickHandler = (e) => {
     e.preventDefault();
     console.log('クリックされました');
