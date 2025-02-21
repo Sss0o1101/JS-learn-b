@@ -449,6 +449,45 @@
 
 /* 静的メソッドを使ってみよう。 staticキーワードを使って、クラスから呼び出すことができる静的メソッドを定義する方法--------------------------------------------------------------------------------------------------------------------------------*/
 
+  {
+    class User {
+      //フィールド
+      name;
+      score;
+      static count = 0;  //静的プロパティ
+
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+        User.count++;
+      }
+
+      getUserString() {
+        return `${this.name} ${this.score}`;
+      }
+
+      static getUserCountString() {  //静的メソッド
+        return `${User.count} instance(s) created`;  //${} インスタンス作成
+      }
+    }
+
+
+    const user1 = new User('Taro', 70);
+    const user2 = new User('Jiro', 80);
+    // console.log(User.count); //2
+    console.log(User.getUserCountString()); //2 instance(s) created
+
+
+    console.log(user1.getUserString());  //Taro 70
+    console.log(user2.getUserString());  //Jiro 80
+  }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* ゲッターとセッターを設定 --------------------------------------------------------------------------------------------------------------------------------*/
+
+  //get・ゲッター・・・プロパティの値を取得するためのメソッド
+  //set・セッター・・・プロパティの値を設定するためのメソッド
 
   class User {
     //フィールド
