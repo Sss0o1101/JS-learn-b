@@ -416,11 +416,45 @@
   //今回欲しいのは、インスタンスごとに値を保持するプロパティではなくて、クラス全体で 1 つの値だけを管理する特殊なプロパティ。
   //static
 
+  {
+    class User {
+      //フィールド
+      name;
+      score;
+      static count = 0;  //静的プロパティ
+
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+        User.count++;
+      }
+      getUserString() {
+        return `${this.name} ${this.score}`;
+      }
+    }
+
+    //let count = 0;
+    const user1 = new User('Taro', 70);
+    //count++;
+    const user2 = new User('Jiro', 80);
+    //count++;
+    //console.log(count); //2
+    console.log(User.count); //2
+
+    console.log(user1.getUserString());  //Taro 70
+    console.log(user2.getUserString());  //Jiro 80
+    }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* 静的メソッドを使ってみよう。 staticキーワードを使って、クラスから呼び出すことができる静的メソッドを定義する方法--------------------------------------------------------------------------------------------------------------------------------*/
+
+
   class User {
     //フィールド
     name;
     score;
-    static count =0;  //静的プロパティ
+    static count = 0;  //静的プロパティ
 
     constructor (name, score) {
       this.name = name;
