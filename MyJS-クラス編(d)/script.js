@@ -571,7 +571,6 @@
 /* クラスの外からは実行することができないメソッドを定義する方法について見ていきます。 --------------------------------------------------------------------------------------------------------------------------------*/
 
 
-
   class User {
     //フィールド
     name;
@@ -586,8 +585,12 @@
       return this.#score;
     }
 
+    #isValueValid(newValue) {
+      return newValue >= 0 && newValue <= 100 ? false : true;
+    }
+
     set score(newValue) {
-      if (newValue < 0 || newValue > 100) {
+      if (this.#isValueValid(newValue) === false) {
         console.log('Invalid value!');
         return
       }
@@ -597,11 +600,9 @@
   }
 
   const user = new User('Taro', 70);
-  user.score = 100; //100
-  // プロパティにアクセスする時に、明らかにおかしな点数を代入しよ、それをはじきたいケースのような、何らかのロジックを組み込みたい場合
-  // user.setScore(99999);
-  user.score = 111;
+  user.score = 999; //Invalid value!
   console.log(user.score); //70
+  console.log(user.isValueValid(999)); //true
 
 
 
