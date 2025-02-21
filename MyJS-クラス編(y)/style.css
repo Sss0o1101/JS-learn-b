@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.accordion {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.accordion-trigger {
+    margin: 0 auto;
+    padding: 10px;
+    display: block;
+    background: #333;
+    color: #FFF;
+    border-top: 1px solid #fff;
+    border-radius: 6px;
+}
+
+.accordion-contents {
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
