@@ -58,7 +58,7 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/*  ------------------------------------------------------------------------------------------*/
+/* クラス, インスタンス 無し ------------------------------------------------------------------------------------------*/
 
   const $elm = document.querySelector('#js-accordion');
   const $trigger = $elm.getElementsByTagName('a');
@@ -74,18 +74,17 @@
     index++;
   }
 
-
-  $trigger[0].addEventListener('click', (e) => clickHandler(e));
-
   //クリックされた時の処理
   const clickHandler = (e) => {
     e.preventDefault();
-    console.log('クリックされました');
 
-    const $contet = $trigger[0].nextElementSibling;
+    const $target = e.currentTarget;
+    const $contet = $target.nextElementSibling;
     if ($contet.style.display === 'block') {
       $contet.style.display = 'none';
     } else {
       $contet.style.display = 'block';
     }
   }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
