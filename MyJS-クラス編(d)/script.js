@@ -461,18 +461,22 @@
       this.score = score;
       User.count++;
     }
+
     getUserString() {
       return `${this.name} ${this.score}`;
     }
+
+    static getUserCountString() {  //静的メソッド
+      return `${User.count} instance(s) created`;  //${} インスタンス作成
+    }
   }
 
-  //let count = 0;
+
   const user1 = new User('Taro', 70);
-  //count++;
   const user2 = new User('Jiro', 80);
-  //count++;
-  //console.log(count); //2
-  console.log(User.count); //2
+  // console.log(User.count); //2
+  console.log(User.getUserCountString()); //2 instance(s) created
+
 
   console.log(user1.getUserString());  //Taro 70
   console.log(user2.getUserString());  //Jiro 80
