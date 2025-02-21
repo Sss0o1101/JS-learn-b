@@ -533,7 +533,7 @@
   class User {
     //フィールド
     name;
-    _score;
+    #score;
 
     constructor (name, score) {
       this.name = name;
@@ -541,7 +541,7 @@
     }
 
     get score() {
-      return this._score;
+      return this.#score;
     }
 
     set score(newValue) {
@@ -549,7 +549,7 @@
         console.log('Invalid value!');
         return
       }
-      this._score = newValue;
+      this.#score = newValue;
     }
 
   }
@@ -558,8 +558,9 @@
   user.score = 100; //100
   // プロパティにアクセスする時に、明らかにおかしな点数を代入しよ、それをはじきたいケースのような、何らかのロジックを組み込みたい場合
   // user.setScore(99999);
-  user.score = 111;  //Invalid value!
+  user.score = 111;
   console.log(user.score); //70
+
 
 
 
