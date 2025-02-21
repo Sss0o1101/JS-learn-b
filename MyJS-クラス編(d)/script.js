@@ -493,31 +493,28 @@
     //フィールド
     name;
     score;
-    static count = 0;  //静的プロパティ
 
     constructor (name, score) {
       this.name = name;
       this.score = score;
-      User.count++;
     }
 
-    getUserString() {
-      return `${this.name} ${this.score}`;
+    get score() {
+
     }
 
-    static getUserCountString() {  //静的メソッド
-      return `${User.count} instance(s) created`;  //${} インスタンス作成
+    set score() {
+
     }
+
   }
 
+  const user = new User('Taro', 70);
+  user.score = 100;
+  // プロパティにアクセスする時に、明らかにおかしな点数を代入しよ、それをはじきたいケースのような、何らかのロジックを組み込みたい場合
+  // user.setScore(99999);
+  console.log(user.score); //100
 
-  const user1 = new User('Taro', 70);
-  const user2 = new User('Jiro', 80);
-  // console.log(User.count); //2
-  console.log(User.getUserCountString()); //2 instance(s) created
 
-
-  console.log(user1.getUserString());  //Taro 70
-  console.log(user2.getUserString());  //Jiro 80
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
