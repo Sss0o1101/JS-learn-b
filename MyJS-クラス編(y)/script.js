@@ -67,4 +67,11 @@
   const clickHandler = (e) => {
     e.preventDefault();
     console.log('クリックされました');
+
+    const $contet = $trigger[0].nextElementSibling;
+    if ($contet.style.display === 'block') {
+      $contet.style.display = 'none';
+    } else {
+      $contet.style.display = 'block';
+    }
   }
