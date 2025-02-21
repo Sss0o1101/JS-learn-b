@@ -532,6 +532,46 @@
   //フィールドを外部からアクセスできないようにするためには、フィールド名の先頭に # を付ける
   //#_scoreでも動くが、#scoreの方が一般的
 
+  {
+    class User {
+      //フィールド
+      name;
+      #score;
+
+      constructor (name, score) {
+        this.name = name;
+        this.score = score;
+      }
+
+      get score() {
+        return this.#score;
+      }
+
+      set score(newValue) {
+        if (newValue < 0 || newValue > 100) {
+          console.log('Invalid value!');
+          return
+        }
+        this.#score = newValue;
+      }
+
+    }
+
+    const user = new User('Taro', 70);
+    user.score = 100; //100
+    // プロパティにアクセスする時に、明らかにおかしな点数を代入しよ、それをはじきたいケースのような、何らかのロジックを組み込みたい場合
+    // user.setScore(99999);
+    user.score = 111;
+    console.log(user.score); //70
+  }
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* クラスの外からは実行することができないメソッドを定義する方法について見ていきます。 --------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
   class User {
     //フィールド
     name;
@@ -562,7 +602,6 @@
   // user.setScore(99999);
   user.score = 111;
   console.log(user.score); //70
-
 
 
 
