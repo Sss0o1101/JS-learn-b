@@ -58,33 +58,75 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/* クラス, インスタンス 有り ------------------------------------------------------------------------------------------*/
+
+  class Accordion {
+    //初期化
+    constructor() {
+      const $elm = document.querySelector('#js-accordion');
+      const $trigger = $elm.getElementsByTagName('a');
+
+      // リファクタリング
+      const $triggerLength = $trigger.length;
+      // for (let i = 0; i < $triggerLength; i++) {
+      //   $trigger[i].addEventListener('click', (e) => clickHandler(e));
+      // }
+      let index = 0;
+      while (index < $triggerLength) {
+      $trigger[index].addEventListener('click', (e) => clickHandler(e));
+      index++;
+      }
+    }
+
+    //クリックされた時の処理
+    const clickHandler = (e) => {
+      e.preventDefault();
+
+      const $target = e.currentTarget;
+      const $contet = $target.nextElementSibling;
+      if ($contet.style.display === 'block') {
+        $contet.style.display = 'none';
+      } else {
+        $contet.style.display = 'block';
+      }
+    }
+
+
+
+
+
+  }
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* クラス, インスタンス 無し ------------------------------------------------------------------------------------------*/
 
-  const $elm = document.querySelector('#js-accordion');
-  const $trigger = $elm.getElementsByTagName('a');
+  // const $elm = document.querySelector('#js-accordion');
+  // const $trigger = $elm.getElementsByTagName('a');
 
-  // リファクタリング
-  const $triggerLength = $trigger.length;
-  // for (let i = 0; i < $triggerLength; i++) {
-  //   $trigger[i].addEventListener('click', (e) => clickHandler(e));
+  // // リファクタリング
+  // const $triggerLength = $trigger.length;
+  // // for (let i = 0; i < $triggerLength; i++) {
+  // //   $trigger[i].addEventListener('click', (e) => clickHandler(e));
+  // // }
+  // let index = 0;
+  // while (index < $triggerLength) {
+  //   $trigger[index].addEventListener('click', (e) => clickHandler(e));
+  //   index++;
   // }
-  let index = 0;
-  while (index < $triggerLength) {
-    $trigger[index].addEventListener('click', (e) => clickHandler(e));
-    index++;
-  }
 
-  //クリックされた時の処理
-  const clickHandler = (e) => {
-    e.preventDefault();
+  // //クリックされた時の処理
+  // const clickHandler = (e) => {
+  //   e.preventDefault();
 
-    const $target = e.currentTarget;
-    const $contet = $target.nextElementSibling;
-    if ($contet.style.display === 'block') {
-      $contet.style.display = 'none';
-    } else {
-      $contet.style.display = 'block';
-    }
-  }
+  //   const $target = e.currentTarget;
+  //   const $contet = $target.nextElementSibling;
+  //   if ($contet.style.display === 'block') {
+  //     $contet.style.display = 'none';
+  //   } else {
+  //     $contet.style.display = 'block';
+  //   }
+  // }
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
