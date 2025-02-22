@@ -60,11 +60,13 @@
 
 /* クラス, インスタンス 有り ------------------------------------------------------------------------------------------*/
 
+  //クラス
   class Accordion {
     //初期化
-    constructor() {
-      const $elm = document.querySelector('#js-accordion');
-      const $trigger = $elm.getElementsByTagName('a');
+    constructor(obj) {
+
+      const $elm = document.querySelector(obj.hookName);
+      const $trigger = $elm.getElementsByTagName(obj.tagName);
 
       // リファクタリング
       const $triggerLength = $trigger.length;
@@ -73,29 +75,33 @@
       // }
       let index = 0;
       while (index < $triggerLength) {
-      $trigger[index].addEventListener('click', (e) => clickHandler(e));
+      $trigger[index].addEventListener('click', (e) => this.clickHandler(e));
       index++;
       }
     }
 
     //クリックされた時の処理
-    const clickHandler = (e) => {
+    clickHandler = (e) => {
       e.preventDefault();
 
       const $target = e.currentTarget;
-      const $contet = $target.nextElementSibling;
-      if ($contet.style.display === 'block') {
-        $contet.style.display = 'none';
+      const $content = $target.nextElementSibling;
+      if ($content.style.display === 'block') {
+        $content.style.display = 'none';
       } else {
-        $contet.style.display = 'block';
+        $content.style.display = 'block';
       }
     }
 
-
-
-
-
   }
+
+  //インスタンス
+  const fuckingAccordion = new Accordion({
+    hookName: '#js-faq',
+    tagName: 'p',
+  });
+
+
 
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------*/
