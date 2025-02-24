@@ -61,14 +61,24 @@
 /*  ------------------------------------------------------------------------------------------*/
 
   class Test {
-    //初期状態で実行する内容
-    constructor() {
-
+    //初期状態で実行する内容 (引数も可能)
+    constructor(val, author) {
+      this.val = val;
+      this.author = author;
     }
+
+    //メソッド  //returnが必要
+    hello() {
+      return 'aaa';
+    }
+
+
+
+
   }
 
-  //インスタンス化
-  const test = new Test();
+  //インスタンス化 (クラスを実行する)
+  const test = new Test(10, 山田);
 
 
 
