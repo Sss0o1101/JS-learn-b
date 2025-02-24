@@ -69,20 +69,30 @@
 
     //メソッド  //returnが必要
     hello() {
-      return `${this.val}です。`;
+      return `${this.author}です。`;
     }
 
-
-
+    //静的メソッド
+    static hello2() {
+      return 'こんにちは';
+    }
 
   }
 
-  //インスタンス化 (クラスを実行する)
+  class Test2 extends Test {
+    constructor(val, author) {
+      super(val, author);
+    }
+  }
+
+
+  //インスタンス化 (クラスを実行する) = new
   const test = new Test(10, 山田);
 
   console.log(test.val); //10
   console.log(test.author); //山田
-  console.log(test.hello()); //10です。
+  console.log(test.hello()); //山田です。
+  console.log(Test.hello2()); //こんにちは
 
 
 
