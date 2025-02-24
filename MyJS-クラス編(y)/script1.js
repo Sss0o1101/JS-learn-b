@@ -80,6 +80,7 @@
 
   }
 
+  //子クラス
   class CopyTest extends Test {
     constructor(val, author) {
       super(val, author);
@@ -87,9 +88,8 @@
 
     copyHello() {
       super.hello();
+      return `${this.author}です。`;
     }
-
-
   }
 
 
@@ -101,7 +101,9 @@
   console.log(test.hello()); //山田です。
   console.log(CopyTest.hello2()); //こんにちは
 
+  //子クラスのインスタンス化
   const copyTest = new CopyTest(20, 田中);
+
   console.log(copyTest.val); //20
   console.log(copyTest.copyHello()); //こんにちは
 
