@@ -69,6 +69,7 @@
 
     //メソッド  //returnが必要
     hello() {
+      console.log('こんにちは!');
       return `${this.author}です。`;
     }
 
@@ -79,10 +80,16 @@
 
   }
 
-  class Test2 extends Test {
+  class CopyTest extends Test {
     constructor(val, author) {
       super(val, author);
     }
+
+    copyHello() {
+      super.hello();
+    }
+
+
   }
 
 
@@ -92,7 +99,13 @@
   console.log(test.val); //10
   console.log(test.author); //山田
   console.log(test.hello()); //山田です。
-  console.log(Test.hello2()); //こんにちは
+  console.log(CopyTest.hello2()); //こんにちは
+
+  const copyTest = new CopyTest(20, 田中);
+  console.log(copyTest.val); //20
+  console.log(copyTest.copyHello()); //こんにちは
+
+
 
 
 
