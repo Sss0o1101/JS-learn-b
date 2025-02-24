@@ -69,7 +69,7 @@
 
     //メソッド  //returnが必要
     hello() {
-      return 'aaa';
+      return `${this.val}です。`;
     }
 
 
@@ -79,6 +79,10 @@
 
   //インスタンス化 (クラスを実行する)
   const test = new Test(10, 山田);
+
+  console.log(test.val); //10
+  console.log(test.author); //山田
+  console.log(test.hello()); //10です。
 
 
 
