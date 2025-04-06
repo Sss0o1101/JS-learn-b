@@ -339,3 +339,7 @@ filter()「配列から条件に合致した要素だけを取り出して新し
   nums[0] = 99;
   console.log(nums);// [99, 20. 30]
   console.log(numsBackup); // [10, 20, 30]
+
+
+
+/
