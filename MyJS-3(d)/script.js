@@ -180,3 +180,11 @@
     console.log(calc(20, (num) => {
         return num * 2;
     }));
+
+    console.log(calc(20, (num) => {
+        return num * 2;
+    }));
+
+    console.log(calc(20, (num) => {
+        return num * 2;
+    }));
